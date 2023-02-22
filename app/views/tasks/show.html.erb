@@ -1,2 +1,11 @@
 <h2><%= @task.title %></h2>
 <p><%= @task.details %></p>
+<p><%=  @task.completed == true ? "Completed" : "Not completed"%></p>
+
+<%= link_to task_new_path do%>
+  <p>Add new task</p>
+<%end%>
+
+<%= link_to tasks_path do%>
+  <p>Show all my tasks</p>
+<%end%>

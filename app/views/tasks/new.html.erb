@@ -3,9 +3,9 @@
 <div class="container">
   <%= form_with model: @task do |f| %>
     <%= f.label :title %>
-    <%= f.text_field :title%>
+    <%= f.text_field :title, :style => "width:200px"%>
     <%= f.label :details %>
-    <%= f.text_field :details %>
+    <%= f.text_field :details, :style => "width: 400px"%> 
     <%= f.label :completed %>
     <%= f.check_box :completed %>
     <%= f.submit %>

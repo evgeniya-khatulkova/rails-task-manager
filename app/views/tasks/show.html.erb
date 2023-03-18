@@ -1,21 +1,30 @@
 <h2><%= @task.title %></h2>
-<p><%= @task.details %></p>
-<p><%=  @task.completed == true ? "Completed" : "Not completed"%></p>
+<div class="colored-div-details">
+  <p><%= @task.details %></p>
+</div>
 
-<%= link_to task_new_path do%>
-  <p>Add new task</p>
-<%end%>
+<div class="container">
+  <p><%=  @task.completed == true ? "Completed" : "Not completed yet"%></p>
+</div>
 
-<%= link_to tasks_path do%>
-  <p>Show all my tasks</p>
-<%end%>
+<div class="task-actions">
 
+  <div class="task">
+    <%= link_to "Show all my tasks", tasks_path %>
+  </div>
 
-<%= link_to task_edit_path do%>
-  <p>Edit</p>
-<%end%>
+  <div class="task">
+    <%= link_to "Add new task", task_new_path %>
+  </div>
 
-<%= link_to "Delete",
-  task_path(@task),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+  <div class="task">
+    <%= link_to "Edit task", task_edit_path %>
+  </div>
+
+  <div class="task">
+    <%= link_to "Delete",
+      task_path(@task),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+  </div>
+</div>

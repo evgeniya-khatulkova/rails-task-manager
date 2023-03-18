@@ -1,11 +1,15 @@
-<h2>All tasks</h2>
+<h2>My tasks</h2>
 
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= link_to task.title, task_path(task) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <ul>
+    <% @tasks.each do |task| %>
+      <li><%= link_to task.title, task_path(task) %></li>
+    <% end %>
+  </ul>
+</div>
 
-<%= link_to task_new_path do%>
-  <p>Add new task</p>
-<%end%>
+<div class="task">
+  <%= link_to task_new_path do%>
+    <p>Add new task</p>
+  <%end%>
+</div>
